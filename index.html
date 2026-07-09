@@ -6,7 +6,7 @@
     <title>Analytics & Reporting Tools | University of Chicago</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,278 +15,410 @@
         }
 
         body {
-            font-family: 'Source Sans Pro', 'PT Sans', Arial, sans-serif;
-            background: #f4f4f4;
-            color: #222;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #f5f5f5;
+            color: #3d3d3d;
+            font-weight: 300;
         }
 
+        /* Top red bar */
+        .top-bar {
+            background: #9e1b32;
+            height: 3px;
+        }
+
+        /* Header with logo */
         .header {
-            background: #800000;
-            color: white;
-            padding: 30px 40px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 40px;
         }
 
         .header-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 20px;
+            justify-content: space-between;
         }
 
-        .logo {
-            height: 60px;
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .header-text h1 {
-            font-family: 'Libre Franklin', Arial, sans-serif;
-            font-size: 2em;
+        .shield {
+            width: 35px;
+            height: 42px;
+            fill: #800000;
+        }
+
+        .site-title {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1.1em;
+            color: #3d3d3d;
+            font-weight: 400;
+        }
+
+        .site-title strong {
             font-weight: 700;
-            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #9e1b32;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: white;
+            border-right: 1px solid #e0e0e0;
+            padding: 30px 0;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 15px 30px;
+            color: #3d3d3d;
+            text-decoration: none;
+            font-size: 0.95em;
+            font-weight: 400;
+            transition: all 0.2s;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background: #f9f9f9;
+            color: #9e1b32;
+            border-left: 3px solid #9e1b32;
+            padding-left: 27px;
+        }
+
+        /* Main content */
+        .main-content {
+            flex: 1;
+            padding: 40px 60px 60px 60px;
+            background: white;
+        }
+
+        .page-title {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 2.8em;
+            color: #3d3d3d;
+            font-weight: 400;
+            margin-bottom: 10px;
             letter-spacing: -0.5px;
         }
 
-        .header-text p {
-            font-size: 1.1em;
-            margin-top: 5px;
-            opacity: 0.95;
+        .tagline {
+            font-size: 1em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            font-weight: 400;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px 40px;
-        }
-
-        .intro {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .intro h2 {
-            font-family: 'Libre Franklin', Arial, sans-serif;
-            font-size: 1.8em;
-            color: #800000;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .intro p {
-            font-size: 1.1em;
+        .intro-text {
+            font-size: 1.05em;
+            line-height: 1.7;
             color: #555;
-            line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
 
+        /* Tools grid */
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
             margin-bottom: 60px;
         }
 
         .tool-card {
-            background: white;
-            border: 1px solid #ddd;
-            border-top: 4px solid #800000;
-            padding: 30px 25px;
+            background: #fafafa;
+            border: 1px solid #e8e8e8;
+            padding: 30px;
             transition: all 0.3s ease;
-            text-align: left;
+            position: relative;
         }
 
         .tool-card:hover {
-            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.15);
-            border-top-color: #5a0000;
-            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-color: #9e1b32;
         }
 
         .tool-card h3 {
-            font-family: 'Libre Franklin', Arial, sans-serif;
-            color: #800000;
-            font-size: 1.5em;
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.8em;
+            color: #3d3d3d;
             margin-bottom: 12px;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .tool-card p {
-            color: #555;
+            color: #666;
             font-size: 0.95em;
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 20px;
+            font-weight: 300;
         }
 
         .tool-card a {
             display: inline-block;
-            background: #800000;
-            color: white;
+            color: #9e1b32;
             text-decoration: none;
-            padding: 10px 24px;
-            font-weight: 600;
-            font-size: 0.95em;
-            transition: background 0.3s ease;
-            border: none;
+            font-weight: 500;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
         }
 
         .tool-card a:hover {
-            background: #5a0000;
+            border-bottom-color: #9e1b32;
         }
 
+        .tool-card a::after {
+            content: " →";
+            font-size: 1.2em;
+        }
+
+        /* Resources section */
         .resources-section {
-            background: white;
-            border: 1px solid #ddd;
-            border-left: 5px solid #767676;
-            padding: 35px 30px;
-            margin-top: 50px;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 40px;
+            margin-top: 40px;
         }
 
-        .resources-section h3 {
-            font-family: 'Libre Franklin', Arial, sans-serif;
-            color: #222;
-            font-size: 1.6em;
-            margin-bottom: 20px;
-            font-weight: 700;
+        .resources-section h2 {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 2em;
+            color: #3d3d3d;
+            margin-bottom: 25px;
+            font-weight: 600;
         }
 
-        .resources-links {
+        .resource-list {
+            list-style: none;
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
 
-        .resource-link {
+        .resource-list li {
+            background: #fafafa;
+            border-left: 3px solid #9e1b32;
+            padding: 20px 25px;
+            transition: all 0.2s;
+        }
+
+        .resource-list li:hover {
+            background: #f5f5f5;
+            padding-left: 30px;
+        }
+
+        .resource-list a {
+            color: #3d3d3d;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 400;
             display: flex;
             align-items: center;
-            padding: 15px 20px;
-            background: #f9f9f9;
-            border: 1px solid #e5e5e5;
-            text-decoration: none;
-            color: #800000;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            gap: 10px;
         }
 
-        .resource-link:hover {
-            background: #f4f4f4;
-            border-color: #800000;
-            padding-left: 25px;
-        }
-
-        .resource-link::before {
+        .resource-list a::before {
             content: "→";
-            margin-right: 10px;
-            font-size: 1.2em;
+            color: #9e1b32;
+            font-size: 1.3em;
+            font-weight: 700;
         }
 
+        .resource-list a:hover {
+            color: #9e1b32;
+        }
+
+        /* Footer */
         .footer {
-            background: #767676;
-            color: white;
+            background: #3d3d3d;
+            color: #bbb;
             text-align: center;
             padding: 30px 40px;
-            margin-top: 60px;
+            font-size: 0.9em;
+            font-weight: 300;
         }
 
         .footer p {
-            font-size: 0.95em;
             margin: 8px 0;
         }
 
         .footer a {
-            color: white;
-            text-decoration: underline;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
         }
 
         .footer a:hover {
-            color: #ddd;
+            border-bottom-color: #fff;
         }
 
-        @media (max-width: 768px) {
-            .header {
-                padding: 20px 25px;
-            }
-
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .logo {
-                height: 50px;
-            }
-
-            .header-text h1 {
-                font-size: 1.5em;
-            }
-
+        @media (max-width: 1024px) {
             .container {
-                padding: 30px 25px;
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
             }
 
             .tools-grid {
                 grid-template-columns: 1fr;
             }
+        }
 
-            .intro h2 {
-                font-size: 1.5em;
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .main-content {
+                padding: 30px 25px;
+            }
+
+            .page-title {
+                font-size: 2em;
             }
         }
     </style>
 </head>
 <body>
+    <div class="top-bar"></div>
+
     <header class="header">
         <div class="header-content">
-            <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="white">
-                <text x="10" y="40" font-family="'Libre Franklin', Arial" font-size="32" font-weight="700">UCHICAGO</text>
-            </svg>
-            <div class="header-text">
-                <h1>Analytics & Reporting Tools</h1>
-                <p>Data & Analytics Ecosystem</p>
+            <div class="logo-section">
+                <svg class="shield" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 42">
+                    <path d="M17.5 0L0 7v10.5c0 10.85 7.5 21 17.5 24.5 10-3.5 17.5-13.65 17.5-24.5V7L17.5 0z"/>
+                </svg>
+                <div class="site-title"><strong>inside</strong> UChicago</div>
             </div>
+            <nav class="nav-links">
+                <a href="#tools">Analytics</a>
+                <a href="#resources">Resources</a>
+                <a href="https://intranet.uchicago.edu/welcome">Intranet</a>
+            </nav>
         </div>
     </header>
 
     <div class="container">
-        <div class="intro">
-            <h2>Access Business Intelligence Platforms</h2>
-            <p>Select a tool below to access reports, dashboards, and analytics across the university.</p>
-        </div>
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active">Analytics & Reporting</a></li>
+                <li><a href="https://dataviz.uchicago.edu/">Tableau</a></li>
+                <li><a href="https://bireporting.uchicago.edu/BOE/BI">SAP BusinessObjects</a></li>
+                <li><a href="https://abisobia.uchicago.edu/analytics">Oracle OBIEE</a></li>
+                <li><a href="https://orbitreporting.uchicago.edu">Orbit</a></li>
+            </ul>
+        </aside>
 
-        <div class="tools-grid">
-            <div class="tool-card">
-                <h3>Tableau</h3>
-                <p>Interactive data visualization and business intelligence platform for creating dashboards and reports.</p>
-                <a href="https://dataviz.uchicago.edu/" target="_blank">Access Tableau</a>
+        <main class="main-content" id="tools">
+            <h1 class="page-title">Analytics & Reporting Tools</h1>
+            <p class="tagline">Capturing the Potential of Data</p>
+
+            <div class="intro-text">
+                <p>The University of Chicago provides a comprehensive suite of business intelligence and reporting tools to help you gain insights, make data-driven decisions, and access institutional data. Whether you need interactive visualizations, enterprise reports, or custom analytics, our platforms support the full spectrum of analytical needs across the university.</p>
             </div>
 
-            <div class="tool-card">
-                <h3>SAP BusinessObjects</h3>
-                <p>Enterprise reporting and analytics suite for structured business intelligence and operational reports.</p>
-                <a href="https://bireporting.uchicago.edu/BOE/BI" target="_blank">Access SAP BO</a>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Tableau</h3>
+                    <p>Interactive data visualization and business intelligence platform for creating dashboards and reports. Build dynamic visualizations and share insights across the university.</p>
+                    <a href="https://dataviz.uchicago.edu/" target="_blank">Access Tableau</a>
+                </div>
+
+                <div class="tool-card">
+                    <h3>SAP BusinessObjects</h3>
+                    <p>Enterprise reporting and analytics suite for structured business intelligence and operational reports. Access pre-built reports and financial data.</p>
+                    <a href="https://bireporting.uchicago.edu/BOE/BI" target="_blank">Access SAP BO</a>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Oracle OBIEE</h3>
+                    <p>Comprehensive business intelligence platform for enterprise reporting, analysis, and dashboards. Query institutional data and create custom reports.</p>
+                    <a href="https://abisobia.uchicago.edu/analytics" target="_blank">Access OBIEE</a>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Orbit</h3>
+                    <p>Custom analytics and reporting solution for specialized data needs and institutional metrics. Purpose-built for UChicago's unique reporting requirements.</p>
+                    <a href="https://orbitreporting.uchicago.edu" target="_blank">Access Orbit</a>
+                </div>
             </div>
 
-            <div class="tool-card">
-                <h3>Oracle OBIEE</h3>
-                <p>Comprehensive business intelligence platform for enterprise reporting, analysis, and dashboards.</p>
-                <a href="https://abisobia.uchicago.edu/analytics" target="_blank">Access OBIEE</a>
-            </div>
-
-            <div class="tool-card">
-                <h3>Orbit</h3>
-                <p>Custom analytics and reporting solution for specialized data needs and institutional metrics.</p>
-                <a href="https://orbitreporting.uchicago.edu" target="_blank">Access Orbit</a>
-            </div>
-        </div>
-
-        <div class="resources-section">
-            <h3>Intranet Resources</h3>
-            <div class="resources-links">
-                <a href="https://intranet.uchicago.edu/welcome" class="resource-link" target="_blank">
-                    UChicago Intranet Home
-                </a>
-                <a href="https://intranet.uchicago.edu/tools-and-resources/it-services/services/business-intelligence" class="resource-link" target="_blank">
-                    Business Intelligence Services
-                </a>
-            </div>
-        </div>
+            <section class="resources-section" id="resources">
+                <h2>Intranet Resources</h2>
+                <ul class="resource-list">
+                    <li>
+                        <a href="https://intranet.uchicago.edu/welcome" target="_blank">
+                            UChicago Intranet Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://intranet.uchicago.edu/tools-and-resources/it-services/services/business-intelligence" target="_blank">
+                            Business Intelligence Services
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
     </div>
 
     <footer class="footer">
