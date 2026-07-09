@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analytics & Reporting Tools | University of Chicago</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,78 +15,104 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #800000 0%, #a41e34 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 900px;
-            width: 100%;
-            padding: 60px 40px;
+            font-family: 'Source Sans Pro', 'PT Sans', Arial, sans-serif;
+            background: #f4f4f4;
+            color: #222;
         }
 
         .header {
+            background: #800000;
+            color: white;
+            padding: 30px 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            height: 60px;
+        }
+
+        .header-text h1 {
+            font-family: 'Libre Franklin', Arial, sans-serif;
+            font-size: 2em;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .header-text p {
+            font-size: 1.1em;
+            margin-top: 5px;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 40px;
+        }
+
+        .intro {
             text-align: center;
             margin-bottom: 50px;
-            border-bottom: 3px solid #800000;
-            padding-bottom: 30px;
         }
 
-        .header h1 {
-            color: #800000;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .header p {
-            color: #666;
-            font-size: 1.1em;
-            margin-top: 10px;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .tool-card {
-            background: #f8f9fa;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(128, 0, 0, 0.2);
-            border-color: #800000;
-        }
-
-        .tool-card h2 {
-            color: #333;
+        .intro h2 {
+            font-family: 'Libre Franklin', Arial, sans-serif;
             font-size: 1.8em;
+            color: #800000;
             margin-bottom: 15px;
             font-weight: 600;
         }
 
+        .intro p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .tool-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-top: 4px solid #800000;
+            padding: 30px 25px;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .tool-card:hover {
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.15);
+            border-top-color: #5a0000;
+            transform: translateY(-2px);
+        }
+
+        .tool-card h3 {
+            font-family: 'Libre Franklin', Arial, sans-serif;
+            color: #800000;
+            font-size: 1.5em;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
         .tool-card p {
-            color: #666;
+            color: #555;
             font-size: 0.95em;
-            margin-bottom: 20px;
             line-height: 1.5;
+            margin-bottom: 20px;
         }
 
         .tool-card a {
@@ -91,92 +120,178 @@
             background: #800000;
             color: white;
             text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1em;
+            padding: 10px 24px;
+            font-weight: 600;
+            font-size: 0.95em;
             transition: background 0.3s ease;
+            border: none;
         }
 
         .tool-card a:hover {
-            background: #a41e34;
+            background: #5a0000;
+        }
+
+        .resources-section {
+            background: white;
+            border: 1px solid #ddd;
+            border-left: 5px solid #767676;
+            padding: 35px 30px;
+            margin-top: 50px;
+        }
+
+        .resources-section h3 {
+            font-family: 'Libre Franklin', Arial, sans-serif;
+            color: #222;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .resources-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .resource-link {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: #f9f9f9;
+            border: 1px solid #e5e5e5;
+            text-decoration: none;
+            color: #800000;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .resource-link:hover {
+            background: #f4f4f4;
+            border-color: #800000;
+            padding-left: 25px;
+        }
+
+        .resource-link::before {
+            content: "→";
+            margin-right: 10px;
+            font-size: 1.2em;
         }
 
         .footer {
+            background: #767676;
+            color: white;
             text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid #e0e0e0;
-            color: #666;
-            font-size: 0.9em;
+            padding: 30px 40px;
+            margin-top: 60px;
+        }
+
+        .footer p {
+            font-size: 0.95em;
+            margin: 8px 0;
         }
 
         .footer a {
-            color: #800000;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
+            color: white;
             text-decoration: underline;
         }
 
+        .footer a:hover {
+            color: #ddd;
+        }
+
         @media (max-width: 768px) {
-            .container {
-                padding: 40px 25px;
+            .header {
+                padding: 20px 25px;
             }
 
-            .header h1 {
-                font-size: 2em;
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                height: 50px;
+            }
+
+            .header-text h1 {
+                font-size: 1.5em;
+            }
+
+            .container {
+                padding: 30px 25px;
             }
 
             .tools-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
 
-            .tool-card {
-                padding: 25px;
+            .intro h2 {
+                font-size: 1.5em;
             }
         }
     </style>
 </head>
 <body>
+    <header class="header">
+        <div class="header-content">
+            <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="white">
+                <text x="10" y="40" font-family="'Libre Franklin', Arial" font-size="32" font-weight="700">UCHICAGO</text>
+            </svg>
+            <div class="header-text">
+                <h1>Analytics & Reporting Tools</h1>
+                <p>Data & Analytics Ecosystem</p>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
-        <div class="header">
-            <h1>Analytics & Reporting Tools</h1>
-            <p>University of Chicago | Data & Analytics Ecosystem</p>
+        <div class="intro">
+            <h2>Access Business Intelligence Platforms</h2>
+            <p>Select a tool below to access reports, dashboards, and analytics across the university.</p>
         </div>
 
         <div class="tools-grid">
             <div class="tool-card">
-                <h2>Tableau</h2>
+                <h3>Tableau</h3>
                 <p>Interactive data visualization and business intelligence platform for creating dashboards and reports.</p>
                 <a href="https://dataviz.uchicago.edu/" target="_blank">Access Tableau</a>
             </div>
 
             <div class="tool-card">
-                <h2>SAP BusinessObjects</h2>
+                <h3>SAP BusinessObjects</h3>
                 <p>Enterprise reporting and analytics suite for structured business intelligence and operational reports.</p>
                 <a href="https://bireporting.uchicago.edu/BOE/BI" target="_blank">Access SAP BO</a>
             </div>
 
             <div class="tool-card">
-                <h2>Oracle OBIEE</h2>
+                <h3>Oracle OBIEE</h3>
                 <p>Comprehensive business intelligence platform for enterprise reporting, analysis, and dashboards.</p>
                 <a href="https://abisobia.uchicago.edu/analytics" target="_blank">Access OBIEE</a>
             </div>
 
             <div class="tool-card">
-                <h2>Orbit</h2>
+                <h3>Orbit</h3>
                 <p>Custom analytics and reporting solution for specialized data needs and institutional metrics.</p>
                 <a href="https://orbitreporting.uchicago.edu" target="_blank">Access Orbit</a>
             </div>
         </div>
 
-        <div class="footer">
-            <p>Need help getting started? Contact <a href="mailto:analytics-support@uchicago.edu">analytics-support@uchicago.edu</a></p>
-            <p style="margin-top: 10px;">&copy; 2026 University of Chicago</p>
+        <div class="resources-section">
+            <h3>Intranet Resources</h3>
+            <div class="resources-links">
+                <a href="https://intranet.uchicago.edu/welcome" class="resource-link" target="_blank">
+                    UChicago Intranet Home
+                </a>
+                <a href="https://intranet.uchicago.edu/tools-and-resources/it-services/services/business-intelligence" class="resource-link" target="_blank">
+                    Business Intelligence Services
+                </a>
+            </div>
         </div>
     </div>
+
+    <footer class="footer">
+        <p>Need help getting started? Contact <a href="mailto:analytics-support@uchicago.edu">analytics-support@uchicago.edu</a></p>
+        <p>&copy; 2026 University of Chicago</p>
+    </footer>
 </body>
 </html>
