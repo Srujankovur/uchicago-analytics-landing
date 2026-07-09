@@ -49,14 +49,13 @@
         }
 
         .shield {
-            width: 35px;
-            height: 42px;
+            width: 40px;
+            height: 48px;
         }
 
-        .shield img {
+        .shield svg {
             width: 100%;
             height: 100%;
-            object-fit: contain;
         }
 
         .site-title {
@@ -305,7 +304,17 @@
         <div class="header-content">
             <div class="logo-section">
                 <div class="shield">
-                    <img src="https://www.uchicago.edu/wp-content/themes/uchicago/assets/images/logo.png" alt="UChicago Shield">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120">
+                        <defs>
+                            <style>
+                                .shield-maroon { fill: #800000; }
+                            </style>
+                        </defs>
+                        <path class="shield-maroon" d="M50 5 L10 18 L10 50 C10 85 30 108 50 115 C70 108 90 85 90 50 L90 18 Z"/>
+                        <path fill="white" d="M50 25 L30 32 L30 50 C30 70 40 85 50 90 C60 85 70 70 70 50 L70 32 Z"/>
+                        <rect class="shield-maroon" x="45" y="40" width="10" height="35"/>
+                        <rect class="shield-maroon" x="35" y="50" width="30" height="8"/>
+                    </svg>
                 </div>
                 <div class="site-title">Analytics & Reporting Tools</div>
             </div>
