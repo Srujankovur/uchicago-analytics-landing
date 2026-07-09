@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics & Reporting Tools | University of Chicago</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #800000 0%, #a41e34 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            width: 100%;
+            padding: 60px 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 3px solid #800000;
+            padding-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #800000;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tool-card {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(128, 0, 0, 0.2);
+            border-color: #800000;
+        }
+
+        .tool-card h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .tool-card p {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .tool-card a {
+            display: inline-block;
+            background: #800000;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: background 0.3s ease;
+        }
+
+        .tool-card a:hover {
+            background: #a41e34;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #800000;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .tool-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Analytics & Reporting Tools</h1>
+            <p>University of Chicago | Data & Analytics Ecosystem</p>
+        </div>
+
+        <div class="tools-grid">
+            <div class="tool-card">
+                <h2>Tableau</h2>
+                <p>Interactive data visualization and business intelligence platform for creating dashboards and reports.</p>
+                <a href="https://dataviz.uchicago.edu/" target="_blank">Access Tableau</a>
+            </div>
+
+            <div class="tool-card">
+                <h2>SAP BusinessObjects</h2>
+                <p>Enterprise reporting and analytics suite for structured business intelligence and operational reports.</p>
+                <a href="https://bireporting.uchicago.edu/BOE/BI" target="_blank">Access SAP BO</a>
+            </div>
+
+            <div class="tool-card">
+                <h2>Oracle OBIEE</h2>
+                <p>Comprehensive business intelligence platform for enterprise reporting, analysis, and dashboards.</p>
+                <a href="https://abisobia.uchicago.edu/analytics" target="_blank">Access OBIEE</a>
+            </div>
+
+            <div class="tool-card">
+                <h2>Orbit</h2>
+                <p>Custom analytics and reporting solution for specialized data needs and institutional metrics.</p>
+                <a href="https://orbitreporting.uchicago.edu" target="_blank">Access Orbit</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Need help getting started? Contact <a href="mailto:analytics-support@uchicago.edu">analytics-support@uchicago.edu</a></p>
+            <p style="margin-top: 10px;">&copy; 2026 University of Chicago</p>
+        </div>
+    </div>
+</body>
+</html>
